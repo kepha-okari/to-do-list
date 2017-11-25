@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  thing = "something that is not false";
+
   public tasks: Task[] = [
        new Task("Create To-Do List app.", 0),
        new Task("Learn Angular services", 1),
@@ -16,17 +18,21 @@ export class AppComponent {
        new Task("Visit Grandma",5)
    ];
 
-  selectedTask: Task = this.tasks[0];
+  //for edititng the input
+  selectedTask: Task = null;
   showDetails(clickedTask: Task) {
       this.selectedTask = clickedTask;
     }
- doStuff(clickedTask: Task) {
-   if(clickedTask.done === true) {
-     alert("This task is done!");
-   } else {
-     alert("This task is not completed yet! Get to work!");
-   }
- }
+  finishedEditing() {
+      this.selectedTask = null;
+    }
+
+  show() {
+    this.thing = "not null";
+  }
+  hide() {
+    this.thing = null;
+  }
 
 }
 

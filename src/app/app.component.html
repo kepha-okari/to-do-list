@@ -3,7 +3,18 @@
     <h1>
       {{title}}!
     </h1>
-         <h3 (click)="showDetails(currentTask)" *ngFor="let currentTask of tasks">{{ currentTask.description }}</h3>
+    <div *ngIf="thing">
+      <h1>Thing is true and therefore it is displayed!</h1>
+    </div>
+    <button (click)="show()">SHOW</button>
+    <button (click)="hide()">HIDE</button>
+
+      <div *ngFor="let currentTask of tasks">
+        <h3>{{ currentTask.description }}</h3>
+        <button (click)="showDetails(currentTask)">Edit</button>
+      </div>
+
+      <div *ngIf="selectedTask">
          <h1>Edit Task</h1>
          <div>
               <p>Description: {{ selectedTask.description }}</p>
@@ -17,4 +28,7 @@
         <div>
           <label>Enter Task ID:</label>
           <input [(ngModel)]="selectedTask.id">
+          <button (click)="finishedEditing()">Done</button>
+
         </div>
+      </div>
