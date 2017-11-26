@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from './task.model';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,13 @@ export class AppComponent {
   title = 'app';
   thing = "something that is not false";
 
-  public tasks: Task[] = [
+  public masterTaskList: Task[] = [
        new Task("Create To-Do List app.", 0),
        new Task("Learn Angular services", 1),
-       new Task("Learn how to use API in angular", 2),
-       new Task("Do the laundry.", 3),
+       new Task("Learn how to use API in angular 5", 2),
+       new Task("Write a blog about the new Samsung J7.", 3),
        new Task("Watch American Made", 4),
-       new Task("Visit Grandma",5)
+
    ];
 
   //for edititng the input
@@ -26,18 +27,11 @@ export class AppComponent {
   finishedEditing() {
       this.selectedTask = null;
     }
+    show() {
+      this.thing = "not null";
+    }
+    hide() {
+      this.thing = null;
+    }
 
-  show() {
-    this.thing = "not null";
-  }
-  hide() {
-    this.thing = null;
-  }
-
-}
-
-
-export class Task {
-  public done: boolean = false;
-  constructor(public description: string, public id: number) {   }
 }
