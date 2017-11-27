@@ -6,14 +6,16 @@ import { AppComponent } from './app.component';
 import { PieListComponent } from './pie-list/pie-list.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
-
+import { NewTaskComponent } from './new-task/new-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PieListComponent,
     TaskListComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    NewTaskComponent
+
   ],
   imports: [
     BrowserModule,

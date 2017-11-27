@@ -4,11 +4,15 @@
       {{title}}!
     </h1>
     <div *ngIf="thing">
-      <h1>Thing is true and therefore it is displayed!</h1>
+      <h1>Thing is true and therefore it's displayed</h1>
     </div>
     <button (click)="show()">SHOW</button>
     <button (click)="hide()">HIDE</button>
   <app-pie-list></app-pie-list>
+
+  <app-new-task
+      (newTaskSender)="addTask($event)"
+  ></app-new-task>
 
   <app-task-list
         [childTaskList]="masterTaskList"
